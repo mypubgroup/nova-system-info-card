@@ -1,10 +1,10 @@
 <?php
 
-namespace Coreproc\NovaSystemInfoCard\Tests;
+namespace Codeat3\NovaSystemInfoCard\Tests;
 
 use Illuminate\Support\Facades\Route;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Coreproc\NovaSystemInfoCard\CardServiceProvider;
+use Codeat3\NovaSystemInfoCard\CardServiceProvider;
 
 abstract class TestCase extends Orchestra
 {

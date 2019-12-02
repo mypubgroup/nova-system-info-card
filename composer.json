@@ -1,14 +1,14 @@
 {
-    "name": "coreproc/nova-system-info-card",
-    "description": "A Laravel Nova card that shows you your system information.",
+    "name": "codeat3/nova-system-info-card",
+    "description": "A forked version of nova-system-info-card by codeat3 Laravel Nova card that shows you your system information.",
     "keywords": [
         "laravel",
         "nova"
     ],
     "repositories": [
       {
-        "type": "path",
-        "url": "../nova"
+        "type": "composer",
+            "url": "https://nova.laravel.com"
       }
     ],
     "license": "MIT",
@@ -22,26 +22,26 @@
     ],
     "require": {
         "php": ">=7.1.0",
-        "laravel/nova": "*"
+         "laravel/nova": "^2"
     },
     "require-dev": {
-      "orchestra/testbench": "^3.6",
-      "phpunit/phpunit": "7.1"
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
     },
     "autoload": {
         "psr-4": {
-            "Coreproc\\NovaSystemInfoCard\\": "src/"
+            "Codeat3\\NovaSystemInfoCard\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Coreproc\\NovaSystemInfoCard\\Tests\\": "tests/"
+            "Codeat3\\NovaSystemInfoCard\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Coreproc\\NovaSystemInfoCard\\SystemInfoServiceProvider"
+                "Codeat3\\NovaSystemInfoCard\\SystemInfoServiceProvider"
             ]
         }
     },

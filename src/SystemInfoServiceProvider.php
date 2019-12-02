@@ -1,6 +1,6 @@
 <?php
 
-namespace Coreproc\NovaSystemInfoCard;
+namespace Codeat3\NovaSystemInfoCard;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
@@ -38,7 +38,7 @@ class SystemInfoServiceProvider extends ServiceProvider
         }
 
         Route::middleware(['nova'])
-            ->prefix('nova-vendor/coreproc/nova-system-info-card')
+            ->prefix('nova-vendor/codeat3/nova-system-info-card')
             ->group(__DIR__ . '/../routes/api.php');
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Coreproc\NovaSystemInfoCard\Http\Controllers;
+namespace Codeat3\NovaSystemInfoCard\Http\Controllers;
 
 use DB;
 use Laravel\Nova\Nova;
@@ -12,6 +12,7 @@ class SystemInfoController
         return [
             'os' => php_uname('s'),
             'php' => phpversion(),
+            'redis' => phpversion('redis'),
             'database' => $this->getDatabase(),
             'laravel' => app()->version(),
             'nova' => Nova::version(),

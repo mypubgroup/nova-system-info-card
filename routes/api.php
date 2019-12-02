@@ -11,4 +11,4 @@
 |
 */
 
-Route::get('check', \Coreproc\NovaSystemInfoCard\Http\Controllers\SystemInfoController::class.'@check');
+Route::get('check', \Codeat3\NovaSystemInfoCard\Http\Controllers\SystemInfoController::class.'@check');

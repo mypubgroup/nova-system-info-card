@@ -1,6 +1,6 @@
 <?php
 
-namespace Coreproc\NovaSystemInfoCard;
+namespace Codeat3\NovaSystemInfoCard;
 
 use Laravel\Nova\Card;
 
@@ -11,7 +11,7 @@ class SystemInfoCard extends Card
      *
      * @var string
      */
-    public $width = '1/2';
+    public $width = '1/3';
 
     /**
      * Get the component name for the element.
