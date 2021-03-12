@@ -6,10 +6,10 @@
         "nova"
     ],
     "repositories": [
-      {
-        "type": "composer",
+        {
+            "type": "composer",
             "url": "https://nova.laravel.com"
-      }
+        }
     ],
     "license": "MIT",
     "authors": [
@@ -21,8 +21,8 @@
         }
     ],
     "require": {
-        "php": "^7.3",
-         "laravel/nova": "^3.10"
+        "php": "^7.3|^8.0",
+        "laravel/nova": "^3.10"
     },
     "require-dev": {
         "orchestra/testbench": "^6.0",
