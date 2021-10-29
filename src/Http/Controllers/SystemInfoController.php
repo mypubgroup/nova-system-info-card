@@ -9,6 +9,7 @@ class SystemInfoController
 {
     public function check()
     {
+        $date_utc = new \DateTime("now", new \DateTimeZone("UTC"));
         return [
             'os' => php_uname('s'),
             'php' => phpversion(),
@@ -16,6 +17,7 @@ class SystemInfoController
             'database' => $this->getDatabase(),
             'laravel' => app()->version(),
             'nova' => Nova::version(),
+            'utc_time' => $date_utc->format(\DateTimeInterface::RSS),
         ];
     }
 
