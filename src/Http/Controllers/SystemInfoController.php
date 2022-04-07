@@ -2,40 +2,46 @@
 
 namespace Codeat3\NovaSystemInfoCard\Http\Controllers;
 
-use DB;
+use Carbon\Carbon;
+use Illuminate\Container\Container;
+use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 use Laravel\Nova\Nova;
-
 class SystemInfoController
 {
-    public function check()
+    protected array $supportedDrivers = [
+        'sqlite',
+        'mysql',
+        'pgsql',
+        'sqlsrv',
+    ];
+
+    public function check(Request $request)
     {
-        $date_utc = new \DateTime("now", new \DateTimeZone("UTC"));
         return [
             'os' => php_uname('s'),
             'php' => phpversion(),
             'redis' => phpversion('redis'),
-            'database' => $this->getDatabase(),
-            'laravel' => app()->version(),
+            'database' => $this->getDatabaseVersion(),
+            'laravel' => Container::getInstance()->version(),
             'nova' => Nova::version(),
-            'utc_time' => $date_utc->format(\DateTimeInterface::RSS),
+            'utc_time' => Carbon::now('UTC')->toRssString(),
         ];
     }
 
-    private function getDatabase()
+    protected function getDatabaseVersion(): string
     {
-        $knownDatabases = [
-            'sqlite',
-            'mysql',
-            'pgsql',
-            'sqlsrv',
-        ];
+        $defaultDriver = DB::connection()->getConfig('driver');
 
-        if (! in_array(config('database.default'), $knownDatabases)) {
+        if (! in_array($defaultDriver, $this->supportedDrivers)) {
             return 'Unknown';
         }
 
-        $results = DB::select(DB::raw("select version()"));
+        $results = DB::select(
+            DB::raw("SELECT version() as `version`")
+        );
 
-        return $results[0]->{'version()'};
+        return Collection::make($results)->pluck('version')->first() ?? 'Unknown';
     }
 }
