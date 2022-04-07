@@ -2,6 +2,11 @@
 
 All notable changes to `nova-system-info-card` will be documented in this file.
 
+## 1.0.3 - 2022-04-07
+
+- Define node version.
+- Update styling of widget.
+
 ## 1.0.2 - 2022-04-07
 
 - Fix database driver check.

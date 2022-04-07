@@ -1,17 +1,13 @@
 <template>
   <div class="card bg-white">
-    <div class="py-4 px-4 text-sm">
-      <h3 class="mb-2">Basic System Information</h3>
-      <p class="pb-1 truncate"><span class="font-bold pr-3">OS:</span>{{ os }}</p>
-      <p class="pb-1 truncate"><span class="font-bold pr-3">PHP Version:</span>{{ php }}</p>
-      <p class="pb-1 truncate"><span class="font-bold pr-3">Database:</span>{{ database }}</p>
-      <p class="pb-1 truncate">
-          <span class="font-bold pr-3">Laravel Version:</span>{{ laravel }}
-          <span class="font-bold pr-3">Nova Version:</span>{{ nova }}
-        </p>
-      <p class="pb-1">
-          <span class="font-bold pr-3">UTC time:</span>{{ utc_time }}
-      </p>
+    <div class="p-6">
+      <h3 class="mb-4">Basic System Information</h3>
+      <p class="pb-2 truncate"><span class="font-bold pr-3">OS:</span>{{ os }}</p>
+      <p class="pb-2 truncate"><span class="font-bold pr-3">PHP Version:</span>{{ php }}</p>
+      <p class="pb-2 truncate"><span class="font-bold pr-3">Database:</span>{{ database }}</p>
+      <p class="pb-2 truncate"><span class="font-bold pr-3">Laravel Version:</span>{{ laravel }}</p>
+      <p class="pb-2 truncate"><span class="font-bold pr-3">Nova Version:</span>{{ nova }}</p>
+      <p class="truncate"><span class="font-bold pr-3">UTC time:</span>{{ utc_time }}</p>
     </div>
   </div>
 </template>
