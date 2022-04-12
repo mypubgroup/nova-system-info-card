@@ -4,7 +4,6 @@ namespace Codeat3\NovaSystemInfoCard\Http\Controllers;
 
 use Carbon\Carbon;
 use Illuminate\Container\Container;
-use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Laravel\Nova\Nova;
@@ -17,7 +16,7 @@ class SystemInfoController
         'sqlsrv',
     ];
 
-    public function check(Request $request)
+    public function __invoke(): array
     {
         return [
             'os' => php_uname('s'),

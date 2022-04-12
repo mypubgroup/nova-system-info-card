@@ -8,12 +8,15 @@ use Codeat3\NovaSystemInfoCard\CardServiceProvider;
 
 abstract class TestCase extends Orchestra
 {
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
+
         Route::middlewareGroup('nova', []);
     }
-    protected function getPackageProviders($app)
+
+    /** @param \Illuminate\Foundation\Application $app */
+    protected function getPackageProviders($app): array
     {
         return [
             CardServiceProvider::class,
